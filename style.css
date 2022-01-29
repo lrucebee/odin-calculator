@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 html {
   box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+}
+
+:root {
+  --color-pri: #d6aa69;
+  --color-pri-l: hsl(36, 57%, 59%);
+  --color-sec: #7bb8bb;
+  --color-sec-d: #558082;
+  --color-sec-1: #d6eef0;
+  --color-sec-1h: hsl(185, 46%, 84%);
+  --color-sec-2: #a7e0e6;
+  --color-sec-2h: hsl(186, 56%, 73%);
+  --color-txt: #555;
 }
 
 *,
@@ -8,4 +23,99 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+body {
+  color: var(--color-txt);
+  background-color: #eee;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  display: inline-block;
+}
+
+.calculator {
+  background-color: #fff;
+  width: 450px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 2.5rem;
+}
+
+.screen {
+  border-bottom: 1px solid #ddd;
+  padding: 2.5rem 0;
+}
+
+.result {
+  color: var(--color-pri);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
+.equation {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.equation .symbol {
+  font-size: 1.25em;
+  color: var(--color-sec);
+}
+
+.inputs {
+  font-size: 1.25rem;
+  padding-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.btn {
+  height: 76.5px;
+  background-color: var(--color-sec-1);
+  color: var(--color-sec-d);
+  border: none;
+  border-radius: 10px;
+}
+
+.btn:focus {
+  outline-color: var(--color-sec);
+}
+
+.btn:hover {
+  background-color: var(--color-sec-1h);
+}
+
+.btn.operator {
+  background-color: var(--color-sec-2);
+  font-size: 1.3em;
+}
+
+.btn.operator:hover {
+  background-color: var(--color-sec-2h);
+}
+
+.btn.zero {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+
+.btn.equals {
+  background-color: var(--color-pri);
+  color: #eee;
+  font-size: 1.5em;
+}
+
+.btn.equals:hover {
+  background-color: var(--color-pri-l);
 }
