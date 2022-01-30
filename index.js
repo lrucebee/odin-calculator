@@ -200,6 +200,12 @@ function equate() {
   inputMode = true;
 }
 
+function handleKeys(e) {
+  const button = document.querySelector(`button[data-key='${e.key}']`);
+  if (!button) return;
+  button.click();
+}
+
 numBtns.forEach((btn) => btn.addEventListener('click', displayDigits));
 operatorBtns.forEach((btn) => btn.addEventListener('click', handleEquation));
 equalsButton.addEventListener('click', equate);
@@ -207,3 +213,4 @@ decimalBtn.addEventListener('click', displayDecimal);
 delBtn.addEventListener('click', deleteLastDigit);
 clearBtn.addEventListener('click', clearDisplay);
 posNegBtn.addEventListener('click', changeDigitPosNeg);
+window.addEventListener('keydown', handleKeys);
